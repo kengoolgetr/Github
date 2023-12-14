@@ -1,3 +1,3 @@
 # Github
 GitHub-activity
-![Workflow name](https://github.com/jianzhihuang/repository/actions/workflows/stale.yml/badge.svg)
+![Workflow name](https://github.com/jianzhihuang/Github/actions/workflows/stale.yml/badge.svg)
