@@ -14,13 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Random Delay
-        run: |
-          # 隨機延遲 0 到 2700 秒（45 分鐘）
-          DELAY=$((RANDOM % 100))
-          echo "Waiting $DELAY seconds..."
-          sleep $DELAY
-
       - name: Generate Random Commit Message
         id: random-message
         run: |
