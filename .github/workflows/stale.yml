@@ -53,7 +53,6 @@ jobs:
           TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
           echo "RANDOM_MESSAGE2=$RANDOM_TYPE($RANDOM_SCOPE): $RANDOM_ACTION - $TIMESTAMP\n\n調整項目：\n1. 詳細描述調整內容。\n2. 說明原因與效果。\n\n$RANDOM_ISSUE" >> $GITHUB_ENV
 
-    
       - name: GitHub activity
         run: |
           git config --local user.email "${{ secrets.USER_EMAIL }}"
