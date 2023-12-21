@@ -60,7 +60,9 @@ jobs:
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "${{ env.RANDOM_MESSAGE }}"
+          echo "Sleeping for 5 seconds..."
           sleep 5
+          echo "Woke up from sleep"
           git commit --allow-empty -m "${{ env.RANDOM_MESSAGE2 }}"
           git push
 
