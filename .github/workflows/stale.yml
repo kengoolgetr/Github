@@ -3,7 +3,7 @@ name: GitHub activity data as a measure of developer activity
 on:
   workflow_dispatch:
   schedule:
-  - cron: '*/25 * * * *'
+  - cron: '0 * * * *'
 
 jobs:
   stale:
