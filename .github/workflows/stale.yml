@@ -16,6 +16,7 @@ jobs:
 
       - name: Random Delay
         run: |
+          user.email "${{secrets.USER_EMAIL}}"
           # 隨機延遲 0 到 60 秒
           DELAY=$((RANDOM % 60))
           echo "Waiting $DELAY seconds..."
