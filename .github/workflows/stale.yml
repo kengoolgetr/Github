@@ -16,13 +16,13 @@ jobs:
 
       - name: Random Delay
         run: |
-          email = "${{ secrets.USER_EMAIL }}"
-          echo "$email"
+          echo "$EMAIL"
           # 隨機延遲 0 到 60 秒
           DELAY=$((RANDOM % 60))
           echo "Waiting $DELAY seconds..."
           sleep $DELAY
-
+        env:
+          EMAIL: ${{ secrets.USER_EMAIL }}
       - name: Generate Random Commit Message
         id: random-message
         run: |
