@@ -16,7 +16,8 @@ jobs:
 
       - name: Random Delay
         run: |
-          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          email = "${{ secrets.USER_EMAIL }}"
+          echo "$email"
           # 隨機延遲 0 到 60 秒
           DELAY=$((RANDOM % 60))
           echo "Waiting $DELAY seconds..."
