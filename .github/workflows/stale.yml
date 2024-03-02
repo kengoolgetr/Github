@@ -16,13 +16,11 @@ jobs:
 
       - name: Random Delay
         run: |
-          echo "$EMAIL"
           # 隨機延遲 0 到 60 秒
-          DELAY=$((RANDOM % 60))
+          DELAY=$((RANDOM % 1))
           echo "Waiting $DELAY seconds..."
           sleep $DELAY
-        env:
-          EMAIL: ${{ secrets.USER_EMAIL }}
+
       - name: Generate Random Commit Message
         id: random-message
         run: |
@@ -57,7 +55,7 @@ jobs:
 
       - name: GitHub activity
         run: |
-          git config --local user.email "${{ secrets.USER_EMAI L}}"
+          git config --local user.email "${{ secrets.USER_EMAIL }}"
           git config --local user.name "${{ secrets.USER_NAME }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
@@ -81,7 +79,7 @@ jobs:
             git push
 
             # 隨機睡眠 30 到 60 秒
-            DELAY=$((RANDOM % 31 + 30))
+            DELAY=$((RANDOM % 1 + 1))
             echo "Sleeping for $DELAY seconds..."
             sleep $DELAY
           done
